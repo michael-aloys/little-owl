@@ -7,16 +7,18 @@ The check for updates is done on a per file basis, which is especially
 useful for programs in development/test-phase with many minor changes. 
 A "per version" update functionality is planned.
 
+This project is licensed under the [MIT 
+license](https://opensource.org/licenses/MIT). 
 Bot the client (child) and the server (parent) are written in C++ using
 Qt5. Little-owl is still in development. If you want to use it and/or 
 take part in the development, just write me.
 
 ## How it works
 
-When you updated your code, run the parent application on the server 
-where your current version is stored. An index file is generated that 
-encodes the current state of the files. This can also be done as part 
-of a build script. The command
+After changing your code, run little-owl's parent application on the server 
+where the current version of your program is stored. An index file is 
+generated that encodes the current state of the files. This can also be 
+done as part of a build script. The command
 
 ```
 ./Parent -f "./files" -r "https://updates.example.com/files/" -i "./index.json"
@@ -37,10 +39,19 @@ After the installation, the user can start the actual program.
 
 ![Screenshot of LittleOwl Client 1](documentation/images/child02.png)
 
-The client is configured using the file *setting.ini*. You can find this file
-in the resources/Child directory. It must be changed to fit the paths 
-of your application and placed in the same directory as the Child 
-executable.
+The client is configured using the file *config.ini*. You can find this file
+in the resources/Child directory of the repository. It must be changed 
+to fit the paths of your application and placed in the same directory as 
+the Child executable.
+
+## Compiling
+
+The code is written in Qt5. If you use the QtCreator, just open the 
+*LittleOwl.pro* file and import the project. This will import the 
+client (Child), server index generator (Parent) and shared library 
+(Common) sub-projects.
+
+If you encounter any problems, do not hesitate to contact me!
 
 
 ## Todos
@@ -51,3 +62,4 @@ executable.
 * Translation
 * Customizable UI
 * Various minor todos (see in code "TODO")
+* Make compiled versions available
