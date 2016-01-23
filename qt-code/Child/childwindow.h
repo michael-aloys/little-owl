@@ -70,7 +70,7 @@ private:
     const QString SETTINGS_NAME_LOCAL_BASE = "path/localBase";
     const QString SETTINGS_NAME_REMOTE_INDEX = "path/remoteIndex";
     const QString SETTINGS_NAME_NEXT_PATH = "path/nextProgram";
-    const QString SETTINGS_NAME_NEXT_BUTTON = "gui/textNext";
+    const QString SETTINGS_NAME_NEXT_NAME = "gui/nextProgramName";
 
 };
 

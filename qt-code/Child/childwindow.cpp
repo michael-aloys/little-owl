@@ -32,6 +32,7 @@ ChildWindow::ChildWindow(QWidget *parent) :
     loadSettings();
 
     m_pUi->setupUi(this);
+    setWindowTitle(getStringSetting(SETTINGS_NAME_NEXT_NAME) + " - LittleOwl Update Utility");
     QObject::connect(m_pChildOwl,SIGNAL(checkedUpdates(bool,bool)),this,SLOT(checkedUpdates(bool,bool)));
     QObject::connect(m_pChildOwl,SIGNAL(installedUpdates()),this,SLOT(installedUpdates()));
 
@@ -63,7 +64,7 @@ void ChildWindow::prepareFinishedState()
 {
     m_UpdateAvailable = false;
     m_pUi->skipButton->setEnabled(false);
-    m_pUi->updateButton->setText(getStringSetting(SETTINGS_NAME_NEXT_BUTTON));
+    m_pUi->updateButton->setText("Start " + getStringSetting(SETTINGS_NAME_NEXT_NAME));
     m_pUi->updateButton->setEnabled(true);
 }
 
